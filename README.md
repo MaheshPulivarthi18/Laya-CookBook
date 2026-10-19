@@ -52,7 +52,9 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`03_reading_the_output.py`](00_basics/03_reading_the_output.py) | Every output field, and the confidence formulas *proven by recomputing them* |
 | `04_router_and_languages.py` | *(next)* how routing picks a checkpoint, and where the heuristic gets it wrong |
 | [`05_presets.py`](00_basics/05_presets.py) | All 5 presets, the state key each expects, and why keys don't scope a question |
-| `06_hidden_features.py` | *(next)* `LayaGuardrail`, hooks, `shortlist_choice`, the HTTP server, the MCP server |
+| [`06_hidden_features.py`](00_basics/06_hidden_features.py) | `LayaGuardrail` (and a real default-config bug in it), hooks, `shortlist_choice` (and a real shortlisting failure), `laya.serve`/`laya.mcp` by reference |
+
+`00_basics/` is complete. Week-1 target also includes the first 3 `recipes/`.
 
 ### `recipes/` and `production/`
 Not yet written -- see the project roadmap.
@@ -82,6 +84,19 @@ Every number printed by these scripts is a real run, not a doc claim.
   state. A guard question that names `` `prompt` `` fires just as hard on an
   injection placed in a *different* field (measured: 0.9999 vs 0.9998). Keep
   states minimal — anything you attach as background context gets judged too.
+- **`LayaGuardrail`'s default threshold has a real bug.** It compares every
+  question against one shared scalar (default 0.5) regardless of type. That's
+  fine for `noul` (a 0–1 probability) but wrong for `score` (`harm_severity` is
+  0–3): a completely benign question ("What is the capital of France?") was
+  blocked, because its score (~0.69) cleared 0.5 even though the model
+  correctly judged it as near-zero harm. Verified against 0.3.11 source —
+  don't use the defaults unmodified.
+- **The fallback shortlist embedder can silently drop the correct answer.**
+  `embed_fn_from_agent` mean-pools Laya's own encoder for similarity, and in
+  one real test it dropped `billing` from the shortlist on an obviously
+  billing-related message, producing a wrong final answer. The package's own
+  docstring says a dedicated bi-encoder "will usually shortlist better" — this
+  is why. Don't trust the fallback embedder unverified in production.
 
 ## License
 

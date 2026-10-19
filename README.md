@@ -51,7 +51,7 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`02_three_question_types.py`](00_basics/02_three_question_types.py) | `choice` vs `score` vs `noul`, side by side on the same input |
 | [`03_reading_the_output.py`](00_basics/03_reading_the_output.py) | Every output field, and the confidence formulas *proven by recomputing them* |
 | `04_router_and_languages.py` | *(next)* how routing picks a checkpoint, and where the heuristic gets it wrong |
-| `05_presets.py` | *(next)* every built-in preset, the state key each one expects |
+| [`05_presets.py`](00_basics/05_presets.py) | All 5 presets, the state key each expects, and why keys don't scope a question |
 | `06_hidden_features.py` | *(next)* `LayaGuardrail`, hooks, `shortlist_choice`, the HTTP server, the MCP server |
 
 ### `recipes/` and `production/`
@@ -77,6 +77,11 @@ Every number printed by these scripts is a real run, not a doc claim.
 - **Language routing is a script + stopword heuristic, not a language-ID model.**
   It's reliable for script (Devanagari/Tamil/etc. always route correctly) but
   fuzzy for Latin-script languages close to English, including Hinglish.
+- **State keys are hints, not bindings — you cannot scope a question to one
+  field.** `serialize_state` is `json.dumps(state)`, so the model sees the whole
+  state. A guard question that names `` `prompt` `` fires just as hard on an
+  injection placed in a *different* field (measured: 0.9999 vs 0.9998). Keep
+  states minimal — anything you attach as background context gets judged too.
 
 ## License
 

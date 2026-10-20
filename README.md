@@ -63,10 +63,11 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`phishing_detection/`](recipes/phishing_detection/) | 16 messages across English/Hindi/Marathi, 2 criteria wordings — isolates a real language-driven false-positive bias (same complaint: 0.17 English vs. 0.65–0.91 Hindi) that rewriting the question does not fix |
 | [`support_triage/`](recipes/support_triage/) | 13 tickets through `triage_questions()` (85% intent accuracy) — the more important miss is an *easy*, unambiguous question losing confidently (70%) to `other`, not the hard edge case |
 | [`jailbreak_guard/`](recipes/jailbreak_guard/) | 14 prompts testing both directions (real jailbreaks vs. benign-but-similar text) — a complete miss on hypothetical-framing jailbreaks (0.001), a false positive on ordinary "ignore the typo" phrasing, and a tested AND-rule fix that trades the false positive for a new false negative |
+| [`llm_routing/`](recipes/llm_routing/) | 16 requests through `router_questions()` — the top `difficulty` level never once reached "hard" even for genuinely hard requests (use `score`, not argmax), and a medical-safety question scored low on both `domain` and `is_sensitive`, the two signals meant to catch it |
 
-Week 1 (basics + 3 recipes) is complete. 1 of 6 remaining week-2 recipes done
-(llm_routing, fact_checking, multilingual_hindi_marathi, hinglish,
-conversation_scoring still to come).
+Week 1 (basics + 3 recipes) is complete. 2 of 6 remaining week-2 recipes done
+(fact_checking, multilingual_hindi_marathi, hinglish, conversation_scoring
+still to come).
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -134,6 +135,16 @@ Every number printed by these scripts is a real run, not a doc claim.
   false negative on a real jailbreak with weaker injection signal
   (0.447) — there's no simple threshold fix here; test any combination
   rule against adversarial examples before trusting it.
+- **`difficulty`'s top probability level almost never reaches "hard," even
+  for genuinely hard requests.** `recipes/llm_routing/`: three clearly hard
+  requests (a distributed rate limiter design, a math proof, a disguised
+  multi-step word problem) all topped out at "moderate" as the single most
+  likely level, despite scoring 1.73–2.17 on the continuous `score`. Gate
+  on `score`, not `argmax(probabilities)`, for the same reason
+  `03_reading_the_output.py` warns about `score` generally. Separately, a
+  medical-safety question scored low on both `domain` (landed in
+  `chitchat`) and `is_sensitive` (0.07) — the two signals meant to flag it
+  for careful handling both missed.
 
 ## License
 

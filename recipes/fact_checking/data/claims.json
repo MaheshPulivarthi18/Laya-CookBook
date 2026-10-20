@@ -1,0 +1,74 @@
+[
+  {
+    "id": "supported_direct",
+    "label": "supported",
+    "input": "The company reported revenue of $4.2M in Q3, up 12% year over year.",
+    "prediction": "Revenue in Q3 was $4.2 million, a 12% increase from the prior year."
+  },
+  {
+    "id": "unsupported_fabricated_detail",
+    "label": "unsupported",
+    "input": "The company reported revenue of $4.2M in Q3, up 12% year over year.",
+    "prediction": "Revenue in Q3 was $4.2 million, driven primarily by a 30% increase in enterprise customers."
+  },
+  {
+    "id": "contradicted_scale",
+    "label": "unsupported",
+    "input": "The outage lasted 45 minutes and affected only the EU region.",
+    "prediction": "The outage lasted several hours and affected all regions globally."
+  },
+  {
+    "id": "supported_paraphrase",
+    "label": "supported",
+    "input": "Our refund policy allows returns within 30 days of purchase with a valid receipt.",
+    "prediction": "You can return an item within a month of buying it if you have your receipt."
+  },
+  {
+    "id": "unsupported_extra_capability",
+    "label": "unsupported",
+    "input": "The new feature lets users export reports to CSV.",
+    "prediction": "The new feature lets users export reports to CSV and PDF."
+  },
+  {
+    "id": "supported_negation",
+    "label": "supported",
+    "input": "We do not offer refunds for digital downloads.",
+    "prediction": "Digital downloads are non-refundable."
+  },
+  {
+    "id": "unsupported_wrong_entity",
+    "label": "unsupported",
+    "input": "Alice approved the budget increase for the marketing team.",
+    "prediction": "Bob approved the budget increase for the marketing team."
+  },
+  {
+    "id": "unsupported_true_but_not_in_context",
+    "label": "unsupported",
+    "input": "Paris is the capital of France.",
+    "prediction": "Paris, the capital of France, has a population of about 2.1 million people."
+  },
+  {
+    "id": "unsupported_invented_cause",
+    "label": "unsupported",
+    "input": "Sales dropped 8% in March after a pricing change was introduced.",
+    "prediction": "Sales dropped 8% in March because the pricing change confused customers."
+  },
+  {
+    "id": "unsupported_wrong_date",
+    "label": "unsupported",
+    "input": "The conference will be held in September 2026 in Berlin.",
+    "prediction": "The conference will be held in October 2026 in Berlin."
+  },
+  {
+    "id": "supported_summary",
+    "label": "supported",
+    "input": "The Q3 product update adds dark mode, a redesigned dashboard, and faster search. Dark mode can be toggled from account settings.",
+    "prediction": "The Q3 update introduced a dark mode option, which users can turn on from their account settings."
+  },
+  {
+    "id": "supported_quote",
+    "label": "supported",
+    "input": "The CEO said in the earnings call: \"We expect modest growth in Q4, roughly in line with Q3.\"",
+    "prediction": "The CEO said they expect modest growth in Q4, roughly in line with Q3."
+  }
+]

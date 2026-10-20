@@ -1,0 +1,98 @@
+[
+  {
+    "id": "supported_direct",
+    "label": "supported",
+    "predicted": "supported",
+    "match": true,
+    "supported_noul": 0.9141,
+    "confidence": 0.9141
+  },
+  {
+    "id": "unsupported_fabricated_detail",
+    "label": "unsupported",
+    "predicted": "unsupported",
+    "match": true,
+    "supported_noul": 0.014,
+    "confidence": 0.986
+  },
+  {
+    "id": "contradicted_scale",
+    "label": "unsupported",
+    "predicted": "supported",
+    "match": false,
+    "supported_noul": 0.6384,
+    "confidence": 0.6384
+  },
+  {
+    "id": "supported_paraphrase",
+    "label": "supported",
+    "predicted": "supported",
+    "match": true,
+    "supported_noul": 0.9427,
+    "confidence": 0.9427
+  },
+  {
+    "id": "unsupported_extra_capability",
+    "label": "unsupported",
+    "predicted": "unsupported",
+    "match": true,
+    "supported_noul": 0.0204,
+    "confidence": 0.9796
+  },
+  {
+    "id": "supported_negation",
+    "label": "supported",
+    "predicted": "supported",
+    "match": true,
+    "supported_noul": 0.9577,
+    "confidence": 0.9577
+  },
+  {
+    "id": "unsupported_wrong_entity",
+    "label": "unsupported",
+    "predicted": "supported",
+    "match": false,
+    "supported_noul": 0.6514,
+    "confidence": 0.6514
+  },
+  {
+    "id": "unsupported_true_but_not_in_context",
+    "label": "unsupported",
+    "predicted": "unsupported",
+    "match": true,
+    "supported_noul": 0.0001,
+    "confidence": 0.9999
+  },
+  {
+    "id": "unsupported_invented_cause",
+    "label": "unsupported",
+    "predicted": "unsupported",
+    "match": true,
+    "supported_noul": 0.0283,
+    "confidence": 0.9717
+  },
+  {
+    "id": "unsupported_wrong_date",
+    "label": "unsupported",
+    "predicted": "supported",
+    "match": false,
+    "supported_noul": 0.6401,
+    "confidence": 0.6401
+  },
+  {
+    "id": "supported_summary",
+    "label": "supported",
+    "predicted": "supported",
+    "match": true,
+    "supported_noul": 0.8992,
+    "confidence": 0.8992
+  },
+  {
+    "id": "supported_quote",
+    "label": "supported",
+    "predicted": "supported",
+    "match": true,
+    "supported_noul": 0.9753,
+    "confidence": 0.9753
+  }
+]

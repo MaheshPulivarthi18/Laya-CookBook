@@ -64,10 +64,10 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`support_triage/`](recipes/support_triage/) | 13 tickets through `triage_questions()` (85% intent accuracy) — the more important miss is an *easy*, unambiguous question losing confidently (70%) to `other`, not the hard edge case |
 | [`jailbreak_guard/`](recipes/jailbreak_guard/) | 14 prompts testing both directions (real jailbreaks vs. benign-but-similar text) — a complete miss on hypothetical-framing jailbreaks (0.001), a false positive on ordinary "ignore the typo" phrasing, and a tested AND-rule fix that trades the false positive for a new false negative |
 | [`llm_routing/`](recipes/llm_routing/) | 16 requests through `router_questions()` — the top `difficulty` level never once reached "hard" even for genuinely hard requests (use `score`, not argmax), and a medical-safety question scored low on both `domain` and `is_sensitive`, the two signals meant to catch it |
+| [`fact_checking/`](recipes/fact_checking/) | First real use of `LayaEvaluator` for hallucination detection — every false positive is an entity-swap (wrong name/date/number in an otherwise-faithful sentence); a verified threshold sweep shows accuracy jumps from 75% to 100% by raising the cutoff from 0.5 to 0.7 |
 
-Week 1 (basics + 3 recipes) is complete. 2 of 6 remaining week-2 recipes done
-(fact_checking, multilingual_hindi_marathi, hinglish, conversation_scoring
-still to come).
+Week 1 (basics + 3 recipes) is complete. 3 of 6 remaining week-2 recipes done
+(multilingual_hindi_marathi, hinglish, conversation_scoring still to come).
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -145,6 +145,15 @@ Every number printed by these scripts is a real run, not a doc claim.
   medical-safety question scored low on both `domain` (landed in
   `chitchat`) and `is_sensitive` (0.07) — the two signals meant to flag it
   for careful handling both missed.
+- **Hallucination checking (`LayaEvaluator`) reliably catches *added*
+  content but not *swapped* entities.** `recipes/fact_checking/`: every
+  false positive (a fabricated claim marked "supported") was a single
+  swapped name, date, or number inside an otherwise-faithful sentence,
+  scoring 0.64–0.65 — just over the default 0.5 threshold, while genuinely
+  supported claims scored ≥0.90. A verified threshold sweep shows raising
+  the cutoff to ≥0.7 fixes all 3 misses on this test set (75%→100%), but
+  don't trust this check alone for high-stakes numbers/names/dates even
+  after recalibrating.
 
 ## License
 

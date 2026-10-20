@@ -1,0 +1,62 @@
+[
+  {
+    "id": "billing_duplicate_charge",
+    "expected_category": "billing",
+    "subject": "Duplicate charge on invoice #4411",
+    "body": "Hi, we were billed twice for March. Please refund the duplicate today or we will cancel our plan."
+  },
+  {
+    "id": "technical_outage",
+    "expected_category": "technical",
+    "subject": "API returning 500 errors since 2pm",
+    "body": "Every call to /v1/orders has returned a 500 error for the last hour. This is blocking checkout for our customers."
+  },
+  {
+    "id": "sales_pricing",
+    "expected_category": "sales",
+    "subject": "Enterprise pricing for 500 seats",
+    "body": "We're evaluating your product for a 500-seat rollout next quarter. Could you send enterprise pricing and a demo slot?"
+  },
+  {
+    "id": "security_phishing",
+    "expected_category": "security",
+    "subject": "Urgent: verify your account or it will be suspended",
+    "body": "Your account has unusual activity. Click here within 24 hours and enter your password to confirm your identity or access will be suspended."
+  },
+  {
+    "id": "hr_leave_request",
+    "expected_category": "hr",
+    "subject": "Parental leave request",
+    "body": "I'd like to request 12 weeks of parental leave starting next month. Please let me know the paperwork I need to file."
+  },
+  {
+    "id": "other_newsletter",
+    "expected_category": "other",
+    "subject": "This week in design: 10 free Figma plugins",
+    "body": "Check out our roundup of the best free Figma plugins this week, plus a tutorial on component variants."
+  },
+  {
+    "id": "ambiguous_billing_or_technical",
+    "expected_category": "billing",
+    "subject": "Invoice shows usage I never had",
+    "body": "My invoice says I used 40,000 API calls this month but our dashboard shows 4,000. Either the metering is broken or I'm being billed wrong -- please correct the invoice."
+  },
+  {
+    "id": "urgent_legit_refund",
+    "expected_category": "billing",
+    "subject": "Refund needed before Friday",
+    "body": "We were charged for a plan we cancelled two months ago. I need this refunded before Friday, when our finance team closes the books for the quarter."
+  },
+  {
+    "id": "legit_marketing_not_spam",
+    "expected_category": "sales",
+    "subject": "Your Q3 usage report + a new feature you asked about",
+    "body": "Hi, following up on your support ticket last month -- the export feature you asked about just shipped. Also attached is your Q3 usage summary."
+  },
+  {
+    "id": "hindi_billing_complaint",
+    "expected_category": "billing",
+    "subject": "Dusri baar paisa kaata gaya",
+    "body": "मुझसे दो बार शुल्क लिया गया, कृपया पैसे वापस करें, वरना मैं प्लान रद्द कर दूँगा।"
+  }
+]

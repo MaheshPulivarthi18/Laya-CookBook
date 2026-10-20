@@ -50,13 +50,20 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`01_first_prediction.py`](00_basics/01_first_prediction.py) | One state, one question, every line explained |
 | [`02_three_question_types.py`](00_basics/02_three_question_types.py) | `choice` vs `score` vs `noul`, side by side on the same input |
 | [`03_reading_the_output.py`](00_basics/03_reading_the_output.py) | Every output field, and the confidence formulas *proven by recomputing them* |
-| `04_router_and_languages.py` | *(next)* how routing picks a checkpoint, and where the heuristic gets it wrong |
+| [`04_router_and_languages.py`](00_basics/04_router_and_languages.py) | How routing picks a checkpoint, and where the heuristic gets it wrong (Hinglish) |
 | [`05_presets.py`](00_basics/05_presets.py) | All 5 presets, the state key each expects, and why keys don't scope a question |
 | [`06_hidden_features.py`](00_basics/06_hidden_features.py) | `LayaGuardrail` (and a real default-config bug in it), hooks, `shortlist_choice` (and a real shortlisting failure), `laya.serve`/`laya.mcp` by reference |
 
 `00_basics/` is complete. Week-1 target also includes the first 3 `recipes/`.
 
-### `recipes/` and `production/`
+### `recipes/`
+| Recipe | What it covers |
+|---|---|
+| [`email_routing/`](recipes/email_routing/) | Category + spam/phishing/urgency on 10 real emails (80% category accuracy) — surfaces a serious false-positive: a legitimate Hindi complaint flagged `is_phishing=0.97` |
+
+Phishing detection and support triage recipes are next.
+
+### `production/`
 Not yet written -- see the project roadmap.
 
 ## Environment this was verified on
@@ -97,6 +104,11 @@ Every number printed by these scripts is a real run, not a doc claim.
   billing-related message, producing a wrong final answer. The package's own
   docstring says a dedicated bi-encoder "will usually shortlist better" — this
   is why. Don't trust the fallback embedder unverified in production.
+- **A legitimate non-English email was flagged as phishing at 97% confidence.**
+  `recipes/email_routing/`: a real Hindi billing complaint got `category`
+  right (billing, 90.7%) but `is_spam=0.95` / `is_phishing=0.97` — both wrong.
+  One example, not a benchmark, but don't automate on these two questions for
+  non-English mail without your own evaluation data first.
 
 ## License
 

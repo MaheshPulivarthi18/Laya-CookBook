@@ -1,0 +1,46 @@
+[
+  {
+    "id": "resolved_calm",
+    "expected_churn_risk": false,
+    "expected_escalate": false,
+    "turns": [
+      {"role": "user", "text": "My app keeps crashing when I try to upload a photo."},
+      {"role": "agent", "text": "Sorry about that! Can you tell me what phone model you're using?"},
+      {"role": "user", "text": "iPhone 14, iOS 18."},
+      {"role": "agent", "text": "Thanks -- that's a known bug fixed in version 3.2.1, please update the app."},
+      {"role": "user", "text": "That fixed it, thank you so much!"}
+    ]
+  },
+  {
+    "id": "threat_buried_midway",
+    "expected_churn_risk": true,
+    "expected_escalate": true,
+    "turns": [
+      {"role": "user", "text": "I was charged twice for my subscription this month."},
+      {"role": "agent", "text": "I'm sorry to hear that, let me look into it."},
+      {"role": "user", "text": "This happened last month too and nobody fixed it. If this happens again I'm switching to your competitor."},
+      {"role": "agent", "text": "I understand your frustration, I'll escalate this to billing."},
+      {"role": "user", "text": "Please just fix it, I've already wasted an hour on this."}
+    ]
+  },
+  {
+    "id": "simple_resolved",
+    "expected_churn_risk": false,
+    "expected_escalate": false,
+    "turns": [
+      {"role": "user", "text": "Does your API support pagination?"},
+      {"role": "agent", "text": "Yes, use the `page` and `limit` query parameters."},
+      {"role": "user", "text": "Perfect, thanks."}
+    ]
+  },
+  {
+    "id": "frustration_at_end",
+    "expected_churn_risk": true,
+    "expected_escalate": true,
+    "turns": [
+      {"role": "user", "text": "Can you explain your refund policy?"},
+      {"role": "agent", "text": "Sure, refunds are available within 30 days of purchase."},
+      {"role": "user", "text": "It's been 45 days but I was charged for a feature that doesn't even work. This is ridiculous, I want a refund now."}
+    ]
+  }
+]

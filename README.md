@@ -67,9 +67,9 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`fact_checking/`](recipes/fact_checking/) | First real use of `LayaEvaluator` for hallucination detection — every false positive is an entity-swap (wrong name/date/number in an otherwise-faithful sentence); a verified threshold sweep shows accuracy jumps from 75% to 100% by raising the cutoff from 0.5 to 0.7 |
 | [`multilingual_hindi_marathi/`](recipes/multilingual_hindi_marathi/) | Same 5 messages translated into English/Hindi/Marathi through `triage_questions()` — a pure compliment ("thank you, your team was amazing") was read as a `refund` request at 100% confidence in both Hindi and Marathi |
 | [`hinglish/`](recipes/hinglish/) | Same content forced onto `english` vs. `multilingual` — the intuitive choice (`multilingual` for non-English-looking text) measures *worse* (67% vs. 83%), reproducing the same compliment→refund failure found on pure Hindi/Marathi |
+| [`conversation_scoring/`](recipes/conversation_scoring/) | Multi-turn conversations as Laya's documented-but-unused list state — confirms it reads the whole conversation (catches a threat buried mid-conversation), finds a flattened transcript beats structured turn objects on both cost and accuracy, and surfaces a real internal inconsistency: the most-frustrated, least-resolved conversation got one of the lowest escalation scores |
 
-Week 1 (basics + 3 recipes) is complete. 5 of 6 remaining week-2 recipes done
-(conversation_scoring still to come).
+All 9 planned recipes are complete. `production/` guides are next.
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -170,6 +170,18 @@ Every number printed by these scripts is a real run, not a doc claim.
   found on pure Hindi/Marathi, just less confident (0.463 vs. 1.0). Don't
   assume "more multilingual" is the safer default for code-mixed traffic;
   test both checkpoints on your own data.
+- **A flattened text transcript beat structured turn objects on both cost
+  and accuracy.** `recipes/conversation_scoring/`: the same 5-turn
+  conversation scored `churn_risk=0.76` as a raw list of turn dicts,
+  `0.74` wrapped in a dict, and `0.85` as a plain `"role: text"` string —
+  while using fewer tokens (131 vs. 173/178). The JSON structure's keys
+  and punctuation cost tokens without adding signal here. On the positive
+  side: a churn threat buried in turn 3 of 5 was still caught correctly
+  (0.76), confirming Laya reads the whole conversation, not just the last
+  message — but a separate case found `frustration` (2.69, near-max) and
+  `resolved` (0.26, low) correctly flagging a bad conversation while
+  `escalate` (0.16) didn't act on that read — don't assume one signal
+  implies another; check each explicitly.
 
 ## License
 

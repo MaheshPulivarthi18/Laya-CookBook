@@ -1,0 +1,50 @@
+[
+  {
+    "id": "resolved_calm",
+    "churn_risk": 0.0705,
+    "escalate": 0.1052,
+    "resolved": 0.7634,
+    "frustration_score": 1.0779,
+    "expected_churn_risk": false,
+    "expected_escalate": false,
+    "churn_match": true,
+    "escalate_match": true,
+    "input_tokens": 647
+  },
+  {
+    "id": "threat_buried_midway",
+    "churn_risk": 0.7612,
+    "escalate": 0.7588,
+    "resolved": 0.2041,
+    "frustration_score": 2.1352,
+    "expected_churn_risk": true,
+    "expected_escalate": true,
+    "churn_match": true,
+    "escalate_match": true,
+    "input_tokens": 675
+  },
+  {
+    "id": "simple_resolved",
+    "churn_risk": 0.1485,
+    "escalate": 0.0796,
+    "resolved": 0.4969,
+    "frustration_score": 0.3742,
+    "expected_churn_risk": false,
+    "expected_escalate": false,
+    "churn_match": true,
+    "escalate_match": true,
+    "input_tokens": 403
+  },
+  {
+    "id": "frustration_at_end",
+    "churn_risk": 0.4248,
+    "escalate": 0.1547,
+    "resolved": 0.2574,
+    "frustration_score": 2.6911,
+    "expected_churn_risk": true,
+    "expected_escalate": true,
+    "churn_match": false,
+    "escalate_match": false,
+    "input_tokens": 491
+  }
+]

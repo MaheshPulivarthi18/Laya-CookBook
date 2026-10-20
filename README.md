@@ -65,9 +65,10 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`jailbreak_guard/`](recipes/jailbreak_guard/) | 14 prompts testing both directions (real jailbreaks vs. benign-but-similar text) — a complete miss on hypothetical-framing jailbreaks (0.001), a false positive on ordinary "ignore the typo" phrasing, and a tested AND-rule fix that trades the false positive for a new false negative |
 | [`llm_routing/`](recipes/llm_routing/) | 16 requests through `router_questions()` — the top `difficulty` level never once reached "hard" even for genuinely hard requests (use `score`, not argmax), and a medical-safety question scored low on both `domain` and `is_sensitive`, the two signals meant to catch it |
 | [`fact_checking/`](recipes/fact_checking/) | First real use of `LayaEvaluator` for hallucination detection — every false positive is an entity-swap (wrong name/date/number in an otherwise-faithful sentence); a verified threshold sweep shows accuracy jumps from 75% to 100% by raising the cutoff from 0.5 to 0.7 |
+| [`multilingual_hindi_marathi/`](recipes/multilingual_hindi_marathi/) | Same 5 messages translated into English/Hindi/Marathi through `triage_questions()` — a pure compliment ("thank you, your team was amazing") was read as a `refund` request at 100% confidence in both Hindi and Marathi |
 
-Week 1 (basics + 3 recipes) is complete. 3 of 6 remaining week-2 recipes done
-(multilingual_hindi_marathi, hinglish, conversation_scoring still to come).
+Week 1 (basics + 3 recipes) is complete. 4 of 6 remaining week-2 recipes done
+(hinglish, conversation_scoring still to come).
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -154,6 +155,13 @@ Every number printed by these scripts is a real run, not a doc claim.
   the cutoff to ≥0.7 fixes all 3 misses on this test set (75%→100%), but
   don't trust this check alone for high-stakes numbers/names/dates even
   after recalibrating.
+- **A pure compliment was read as a refund request at 100% confidence, in
+  two different languages.** `recipes/multilingual_hindi_marathi/`: "Thank
+  you so much, your support team was amazing!" — zero billing/refund
+  vocabulary in any language — scored `refund=1.0000` in Hindi and
+  `refund=0.9999` in Marathi, while English correctly read it as `other`.
+  Not a borderline miscalibration: total certainty assigned to the
+  opposite of the correct answer, in both non-English languages tested.
 
 ## License
 

@@ -1,0 +1,172 @@
+[
+  {
+    "content_id": "billing_refund",
+    "expected_intent": "refund",
+    "by_lang": {
+      "english": {
+        "predicted_intent": "refund",
+        "intent_confidence": 0.999,
+        "match": true,
+        "is_urgent": 0.1177,
+        "frustration_score": 1.6752,
+        "routing_model": "english",
+        "input_tokens": 324
+      },
+      "hindi": {
+        "predicted_intent": "refund",
+        "intent_confidence": 0.9998,
+        "match": true,
+        "is_urgent": 0.0121,
+        "frustration_score": 2.2328,
+        "routing_model": "multilingual",
+        "input_tokens": 386
+      },
+      "marathi": {
+        "predicted_intent": "refund",
+        "intent_confidence": 0.9995,
+        "match": true,
+        "is_urgent": 0.1229,
+        "frustration_score": 2.169,
+        "routing_model": "multilingual",
+        "input_tokens": 431
+      }
+    },
+    "cross_lingual_consistent": true
+  },
+  {
+    "content_id": "technical_crash",
+    "expected_intent": "technical_help",
+    "by_lang": {
+      "english": {
+        "predicted_intent": "technical_help",
+        "intent_confidence": 0.9753,
+        "match": true,
+        "is_urgent": 0.0074,
+        "frustration_score": 1.8385,
+        "routing_model": "english",
+        "input_tokens": 324
+      },
+      "hindi": {
+        "predicted_intent": "technical_help",
+        "intent_confidence": 0.9959,
+        "match": true,
+        "is_urgent": 0.0003,
+        "frustration_score": 2.6528,
+        "routing_model": "multilingual",
+        "input_tokens": 386
+      },
+      "marathi": {
+        "predicted_intent": "technical_help",
+        "intent_confidence": 0.9943,
+        "match": true,
+        "is_urgent": 0.0009,
+        "frustration_score": 2.1769,
+        "routing_model": "multilingual",
+        "input_tokens": 411
+      }
+    },
+    "cross_lingual_consistent": true
+  },
+  {
+    "content_id": "cancellation",
+    "expected_intent": "cancellation",
+    "by_lang": {
+      "english": {
+        "predicted_intent": "cancellation",
+        "intent_confidence": 0.9992,
+        "match": true,
+        "is_urgent": 0.3379,
+        "frustration_score": 2.2139,
+        "routing_model": "english",
+        "input_tokens": 309
+      },
+      "hindi": {
+        "predicted_intent": "cancellation",
+        "intent_confidence": 0.9999,
+        "match": true,
+        "is_urgent": 0.0664,
+        "frustration_score": 2.6616,
+        "routing_model": "multilingual",
+        "input_tokens": 356
+      },
+      "marathi": {
+        "predicted_intent": "cancellation",
+        "intent_confidence": 0.9995,
+        "match": true,
+        "is_urgent": 0.0608,
+        "frustration_score": 2.3355,
+        "routing_model": "multilingual",
+        "input_tokens": 366
+      }
+    },
+    "cross_lingual_consistent": true
+  },
+  {
+    "content_id": "information_request",
+    "expected_intent": "information",
+    "by_lang": {
+      "english": {
+        "predicted_intent": "other",
+        "intent_confidence": 0.6479,
+        "match": false,
+        "is_urgent": 0.0854,
+        "frustration_score": 0.6318,
+        "routing_model": "english",
+        "input_tokens": 304
+      },
+      "hindi": {
+        "predicted_intent": "billing_question",
+        "intent_confidence": 0.6135,
+        "match": false,
+        "is_urgent": 0.0004,
+        "frustration_score": 1.8036,
+        "routing_model": "multilingual",
+        "input_tokens": 341
+      },
+      "marathi": {
+        "predicted_intent": "information",
+        "intent_confidence": 0.3425,
+        "match": true,
+        "is_urgent": 0.0023,
+        "frustration_score": 1.6485,
+        "routing_model": "multilingual",
+        "input_tokens": 356
+      }
+    },
+    "cross_lingual_consistent": false
+  },
+  {
+    "content_id": "compliment",
+    "expected_intent": "other",
+    "by_lang": {
+      "english": {
+        "predicted_intent": "other",
+        "intent_confidence": 0.2466,
+        "match": true,
+        "is_urgent": 0.0001,
+        "frustration_score": 0.49,
+        "routing_model": "english",
+        "input_tokens": 324
+      },
+      "hindi": {
+        "predicted_intent": "refund",
+        "intent_confidence": 1.0,
+        "match": false,
+        "is_urgent": 0.0001,
+        "frustration_score": 1.1443,
+        "routing_model": "multilingual",
+        "input_tokens": 351
+      },
+      "marathi": {
+        "predicted_intent": "refund",
+        "intent_confidence": 0.9994,
+        "match": false,
+        "is_urgent": 0.0002,
+        "frustration_score": 1.3961,
+        "routing_model": "multilingual",
+        "input_tokens": 361
+      }
+    },
+    "cross_lingual_consistent": false
+  }
+]

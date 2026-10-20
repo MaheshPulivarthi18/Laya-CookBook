@@ -1,0 +1,37 @@
+[
+  {
+    "content_id": "billing_refund",
+    "expected_intent": "refund",
+    "english": "I was charged twice this month, please refund me.",
+    "hindi": "इस महीने मुझसे दो बार शुल्क लिया गया, कृपया मेरा पैसा वापस करें।",
+    "marathi": "या महिन्यात माझ्याकडून दोनदा शुल्क घेतले गेले, कृपया माझे पैसे परत करा."
+  },
+  {
+    "content_id": "technical_crash",
+    "expected_intent": "technical_help",
+    "english": "The app crashes every time I open the settings page.",
+    "hindi": "जब भी मैं सेटिंग्स पेज खोलता हूँ, ऐप क्रैश हो जाता है।",
+    "marathi": "जेव्हा मी सेटिंग्ज पेज उघडतो तेव्हा अॅप क्रॅश होते."
+  },
+  {
+    "content_id": "cancellation",
+    "expected_intent": "cancellation",
+    "english": "I want to cancel my subscription immediately.",
+    "hindi": "मैं अपनी सदस्यता तुरंत रद्द करना चाहता हूँ।",
+    "marathi": "मला माझी सदस्यता लगेच रद्द करायची आहे."
+  },
+  {
+    "content_id": "information_request",
+    "expected_intent": "information",
+    "english": "Does this plan include priority support?",
+    "hindi": "क्या इस योजना में प्राथमिकता सहायता शामिल है?",
+    "marathi": "या योजनेत प्राधान्य समर्थन समाविष्ट आहे का?"
+  },
+  {
+    "content_id": "compliment",
+    "expected_intent": "other",
+    "english": "Thank you so much, your support team was amazing!",
+    "hindi": "बहुत धन्यवाद, आपकी सहायता टीम बहुत अच्छी थी!",
+    "marathi": "खूप धन्यवाद, तुमची सहाय्य टीम खूप छान होती!"
+  }
+]

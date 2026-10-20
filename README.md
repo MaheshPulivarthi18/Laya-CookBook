@@ -69,7 +69,23 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | [`hinglish/`](recipes/hinglish/) | Same content forced onto `english` vs. `multilingual` — the intuitive choice (`multilingual` for non-English-looking text) measures *worse* (67% vs. 83%), reproducing the same compliment→refund failure found on pure Hindi/Marathi |
 | [`conversation_scoring/`](recipes/conversation_scoring/) | Multi-turn conversations as Laya's documented-but-unused list state — confirms it reads the whole conversation (catches a threat buried mid-conversation), finds a flattened transcript beats structured turn objects on both cost and accuracy, and surfaces a real internal inconsistency: the most-frustrated, least-resolved conversation got one of the lowest escalation scores |
 
-All 9 planned recipes are complete. `production/` guides are next.
+All 9 planned recipes are complete.
+
+### `production/`
+| Guide | What it covers |
+|---|---|
+| [`confidence_gating.py`](production/confidence_gating.py) | Per-type gating functions (`noul_gate`, `choice_gate`, `score_mass_gate`), demonstrated against 3 real cases a naive "confidence ≥ 0.85" rule gets wrong |
+| [`calibration.py`](production/calibration.py) | First real use of `laya.ece_score` — quantifies the Hindi/Marathi calibration gap found qualitatively in `phishing_detection/`: ECE 0.308 (Devanagari) vs. 0.119 (Latin) |
+| [`long_text.py`](production/long_text.py) | A truncation check (`check_truncation`) plus a chunking fallback, reproducing and then fixing Step 0's confidently-wrong fraud-detection example |
+| [`speed_and_memory.py`](production/speed_and_memory.py) | Fresh-measured cold-load cost, MPS vs. CPU, and why batching questions helps (~1.7x) but far less than linearly |
+| [`many_options.py`](production/many_options.py) | Reproduces a real `head_max_len` error at 130 options, and compares 3 fixes honestly (raising limits past the trained context, the unreliable shortlist embedder, and a manual two-step choice) |
+
+[`troubleshooting.md`](troubleshooting.md) indexes every concrete failure
+found while building this repo, with a pointer to the recipe or guide that
+reproduces and fixes each one.
+
+**This completes the full `laya-cookbook` roadmap** (`00_basics/`, all 9
+`recipes/`, all 5 `production/` guides, `troubleshooting.md`).
 
 ### `production/`
 Not yet written -- see the project roadmap.

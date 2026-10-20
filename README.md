@@ -60,8 +60,9 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 | Recipe | What it covers |
 |---|---|
 | [`email_routing/`](recipes/email_routing/) | Category + spam/phishing/urgency on 10 real emails (80% category accuracy) — surfaces a serious false-positive: a legitimate Hindi complaint flagged `is_phishing=0.97` |
+| [`phishing_detection/`](recipes/phishing_detection/) | 16 messages across English/Hindi/Marathi, 2 criteria wordings — isolates a real language-driven false-positive bias (same complaint: 0.17 English vs. 0.65–0.91 Hindi) that rewriting the question does not fix |
 
-Phishing detection and support triage recipes are next.
+Support triage recipe is next.
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -104,11 +105,14 @@ Every number printed by these scripts is a real run, not a doc claim.
   billing-related message, producing a wrong final answer. The package's own
   docstring says a dedicated bi-encoder "will usually shortlist better" — this
   is why. Don't trust the fallback embedder unverified in production.
-- **A legitimate non-English email was flagged as phishing at 97% confidence.**
-  `recipes/email_routing/`: a real Hindi billing complaint got `category`
-  right (billing, 90.7%) but `is_spam=0.95` / `is_phishing=0.97` — both wrong.
-  One example, not a benchmark, but don't automate on these two questions for
-  non-English mail without your own evaluation data first.
+- **A legitimate non-English email was flagged as phishing at 97% confidence
+  — and this generalizes, it isn't a one-off.** `recipes/phishing_detection/`
+  isolated it with a matched pair: the identical billing complaint scores
+  `is_phishing=0.17` in English (correct) vs. `0.65–0.91` in Hindi (wrong),
+  content held constant. Devanagari-script accuracy measured 60% vs. 82% on
+  Latin script (n=16). Rewriting the question's criteria did not fix this
+  and made the Hindi case worse. Don't auto-block on `is_phishing` for
+  non-English mail without your own evaluation data.
 
 ## License
 

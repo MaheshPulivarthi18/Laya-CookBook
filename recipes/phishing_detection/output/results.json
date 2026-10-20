@@ -1,0 +1,326 @@
+{
+  "default": [
+    {
+      "id": "phish_credential_harvest",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.9254,
+      "confidence": 0.9254,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_invoice",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.7766,
+      "confidence": 0.7766,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_delivery",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.9641,
+      "confidence": 0.9641,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_ceo_wire_fraud",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.6731,
+      "confidence": 0.6731,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_tech_support",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.9715,
+      "confidence": 0.9715,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_password_reset",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.6511,
+      "confidence": 0.6511,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_invoice",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.3189,
+      "confidence": 0.6811,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_delivery",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.4669,
+      "confidence": 0.5331,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_urgent_but_real",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.755,
+      "confidence": 0.755,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_internal_request",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.0,
+      "confidence": 1.0,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_billing_complaint",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.1679,
+      "confidence": 0.8321,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_hindi_billing_complaint",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.6529,
+      "confidence": 0.6529,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "legit_hindi_password_reset",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.8925,
+      "confidence": 0.8925,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "phish_hindi_credential_harvest",
+      "true_label": "phishing",
+      "script": "devanagari",
+      "noul": 1.0,
+      "confidence": 1.0,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "legit_marathi_invoice",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.0032,
+      "confidence": 0.9968,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "phish_marathi_urgent_suspend",
+      "true_label": "phishing",
+      "script": "devanagari",
+      "noul": 1.0,
+      "confidence": 1.0,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "multilingual"
+    }
+  ],
+  "detailed": [
+    {
+      "id": "phish_credential_harvest",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.8836,
+      "confidence": 0.8836,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_invoice",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.6082,
+      "confidence": 0.6082,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_delivery",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.9518,
+      "confidence": 0.9518,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_ceo_wire_fraud",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.6496,
+      "confidence": 0.6496,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "phish_fake_tech_support",
+      "true_label": "phishing",
+      "script": "latin",
+      "noul": 0.9923,
+      "confidence": 0.9923,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_password_reset",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.5771,
+      "confidence": 0.5771,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_invoice",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.4342,
+      "confidence": 0.5658,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_real_delivery",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.401,
+      "confidence": 0.599,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_urgent_but_real",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.6877,
+      "confidence": 0.6877,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_internal_request",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.057,
+      "confidence": 0.943,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_billing_complaint",
+      "true_label": "legitimate",
+      "script": "latin",
+      "noul": 0.1118,
+      "confidence": 0.8882,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "english"
+    },
+    {
+      "id": "legit_hindi_billing_complaint",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.9125,
+      "confidence": 0.9125,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "legit_hindi_password_reset",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.9473,
+      "confidence": 0.9473,
+      "predicted": "phishing",
+      "correct": false,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "phish_hindi_credential_harvest",
+      "true_label": "phishing",
+      "script": "devanagari",
+      "noul": 0.9971,
+      "confidence": 0.9971,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "legit_marathi_invoice",
+      "true_label": "legitimate",
+      "script": "devanagari",
+      "noul": 0.393,
+      "confidence": 0.607,
+      "predicted": "legitimate",
+      "correct": true,
+      "routing_model": "multilingual"
+    },
+    {
+      "id": "phish_marathi_urgent_suspend",
+      "true_label": "phishing",
+      "script": "devanagari",
+      "noul": 0.9997,
+      "confidence": 0.9997,
+      "predicted": "phishing",
+      "correct": true,
+      "routing_model": "multilingual"
+    }
+  ]
+}

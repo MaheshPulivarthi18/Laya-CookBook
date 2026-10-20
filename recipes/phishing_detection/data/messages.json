@@ -1,0 +1,82 @@
+[
+  {
+    "id": "phish_credential_harvest",
+    "label": "phishing",
+    "text": "Urgent: verify your account or it will be suspended. Click here within 24 hours and enter your password to confirm your identity or access will be suspended."
+  },
+  {
+    "id": "phish_fake_invoice",
+    "label": "phishing",
+    "text": "Your invoice #88213 of $847.00 could not be processed. Open the attached file and re-enter your card details immediately to avoid service interruption."
+  },
+  {
+    "id": "phish_fake_delivery",
+    "label": "phishing",
+    "text": "Your package could not be delivered due to an incomplete address. Pay a $2.99 redelivery fee at this link within 12 hours or the package will be returned."
+  },
+  {
+    "id": "phish_ceo_wire_fraud",
+    "label": "phishing",
+    "text": "Hi, I'm in a meeting and can't talk. I need you to wire $9,800 to a new vendor account today, it's urgent. Reply with your personal number so I can send the details."
+  },
+  {
+    "id": "phish_fake_tech_support",
+    "label": "phishing",
+    "text": "We detected a virus on your computer. Call this number immediately and give the technician remote access to your screen to remove it before your files are deleted."
+  },
+  {
+    "id": "legit_real_password_reset",
+    "label": "legitimate",
+    "text": "We received a request to reset your password. If this was you, click the link below. If you didn't request this, you can safely ignore this email -- your password has not been changed."
+  },
+  {
+    "id": "legit_real_invoice",
+    "label": "legitimate",
+    "text": "Your invoice #4411 for March is now available in your account portal under Billing > Invoices. No action is needed unless you have questions about a charge."
+  },
+  {
+    "id": "legit_real_delivery",
+    "label": "legitimate",
+    "text": "Your package shipped today and is expected to arrive Thursday. Track it anytime from your orders page -- no payment or action is needed from you."
+  },
+  {
+    "id": "legit_urgent_but_real",
+    "label": "legitimate",
+    "text": "Reminder: your free trial ends tomorrow. If you'd like to keep access, add a payment method from your account settings before midnight. No action needed if you're fine losing access."
+  },
+  {
+    "id": "legit_internal_request",
+    "label": "legitimate",
+    "text": "Can you send me the Q3 numbers before the board call at 3pm? I need the churn and revenue slides specifically, the rest I already have."
+  },
+  {
+    "id": "legit_billing_complaint",
+    "label": "legitimate",
+    "text": "We were billed twice for March. Please refund the duplicate today or we will cancel our plan."
+  },
+  {
+    "id": "legit_hindi_billing_complaint",
+    "label": "legitimate",
+    "text": "मुझसे दो बार शुल्क लिया गया, कृपया पैसे वापस करें, वरना मैं प्लान रद्द कर दूँगा।"
+  },
+  {
+    "id": "legit_hindi_password_reset",
+    "label": "legitimate",
+    "text": "आपके पासवर्ड बदलने की माँग प्राप्त हुई है। यदि यह आपने नहीं किया तो इस ईमेल को नज़रअंदाज़ करें, आपका पासवर्ड नहीं बदला गया है।"
+  },
+  {
+    "id": "phish_hindi_credential_harvest",
+    "label": "phishing",
+    "text": "आपके खाते में असामान्य गतिविधि देखी गई है। 24 घंटे के भीतर इस लिंक पर क्लिक करें और अपना पासवर्ड दर्ज करें, अन्यथा आपका खाता निलंबित कर दिया जाएगा।"
+  },
+  {
+    "id": "legit_marathi_invoice",
+    "label": "legitimate",
+    "text": "तुमचे मार्चचे बिल तुमच्या खात्यात उपलब्ध आहे. कोणतीही कारवाई आवश्यक नाही, फक्त बिल तपासा."
+  },
+  {
+    "id": "phish_marathi_urgent_suspend",
+    "label": "phishing",
+    "text": "तुमचे खाते 24 तासांत बंद केले जाईल. ताबडतोब या लिंकवर क्लिक करा आणि तुमचा पासवर्ड आणि कार्ड तपशील टाका."
+  }
+]

@@ -1,0 +1,275 @@
+[
+  {
+    "id": "refund_clear",
+    "expected_intent": "refund",
+    "predicted_intent": "refund",
+    "match": true,
+    "intent_confidence": 0.9946,
+    "intent_probabilities": {
+      "refund": 0.999,
+      "technical_help": 0.0001,
+      "billing_question": 0.0003,
+      "information": 0.0,
+      "cancellation": 0.0005,
+      "other": 0.0002
+    },
+    "is_urgent": 0.1092,
+    "frustration_score": 1.8875,
+    "frustration_top_level": "2",
+    "refund_requested": 0.9527,
+    "churn_risk": 0.1927,
+    "routing_model": "english"
+  },
+  {
+    "id": "technical_help_clear",
+    "expected_intent": "technical_help",
+    "predicted_intent": "technical_help",
+    "match": true,
+    "intent_confidence": 0.9827,
+    "intent_probabilities": {
+      "refund": 0.0004,
+      "technical_help": 0.996,
+      "billing_question": 0.0004,
+      "information": 0.0005,
+      "cancellation": 0.0004,
+      "other": 0.0022
+    },
+    "is_urgent": 0.045,
+    "frustration_score": 1.6829,
+    "frustration_top_level": "2",
+    "refund_requested": 0.125,
+    "churn_risk": 0.076,
+    "routing_model": "english"
+  },
+  {
+    "id": "billing_question_clear",
+    "expected_intent": "billing_question",
+    "predicted_intent": "billing_question",
+    "match": true,
+    "intent_confidence": 0.9891,
+    "intent_probabilities": {
+      "refund": 0.0004,
+      "technical_help": 0.0005,
+      "billing_question": 0.9977,
+      "information": 0.0003,
+      "cancellation": 0.0002,
+      "other": 0.0009
+    },
+    "is_urgent": 0.0991,
+    "frustration_score": 1.0076,
+    "frustration_top_level": "1",
+    "refund_requested": 0.188,
+    "churn_risk": 0.0524,
+    "routing_model": "english"
+  },
+  {
+    "id": "information_clear",
+    "expected_intent": "information",
+    "predicted_intent": "information",
+    "match": true,
+    "intent_confidence": 0.6389,
+    "intent_probabilities": {
+      "refund": 0.014,
+      "technical_help": 0.0075,
+      "billing_question": 0.0135,
+      "information": 0.8124,
+      "cancellation": 0.0099,
+      "other": 0.1426
+    },
+    "is_urgent": 0.0444,
+    "frustration_score": 0.8913,
+    "frustration_top_level": "1",
+    "refund_requested": 0.0262,
+    "churn_risk": 0.194,
+    "routing_model": "english"
+  },
+  {
+    "id": "cancellation_clear",
+    "expected_intent": "cancellation",
+    "predicted_intent": "cancellation",
+    "match": true,
+    "intent_confidence": 0.9892,
+    "intent_probabilities": {
+      "refund": 0.0005,
+      "technical_help": 0.0002,
+      "billing_question": 0.0011,
+      "information": 0.0002,
+      "cancellation": 0.9977,
+      "other": 0.0004
+    },
+    "is_urgent": 0.237,
+    "frustration_score": 1.1878,
+    "frustration_top_level": "2",
+    "refund_requested": 0.104,
+    "churn_risk": 0.5502,
+    "routing_model": "english"
+  },
+  {
+    "id": "other_clear",
+    "expected_intent": "other",
+    "predicted_intent": "other",
+    "match": true,
+    "intent_confidence": 0.221,
+    "intent_probabilities": {
+      "refund": 0.2156,
+      "technical_help": 0.2734,
+      "billing_question": 0.0354,
+      "information": 0.0289,
+      "cancellation": 0.038,
+      "other": 0.4088
+    },
+    "is_urgent": 0.0001,
+    "frustration_score": 0.3795,
+    "frustration_top_level": "0",
+    "refund_requested": 0.0001,
+    "churn_risk": 0.0,
+    "routing_model": "english"
+  },
+  {
+    "id": "known_ambiguous_payment_failed",
+    "expected_intent": "technical_help",
+    "predicted_intent": "other",
+    "match": false,
+    "intent_confidence": 0.4194,
+    "intent_probabilities": {
+      "refund": 0.1214,
+      "technical_help": 0.0183,
+      "billing_question": 0.2219,
+      "information": 0.0094,
+      "cancellation": 0.0078,
+      "other": 0.6214
+    },
+    "is_urgent": 0.1292,
+    "frustration_score": 1.7534,
+    "frustration_top_level": "2",
+    "refund_requested": 0.7306,
+    "churn_risk": 0.0444,
+    "routing_model": "english"
+  },
+  {
+    "id": "implicit_refund_angry",
+    "expected_intent": "refund",
+    "predicted_intent": "refund",
+    "match": true,
+    "intent_confidence": 0.9943,
+    "intent_probabilities": {
+      "refund": 0.9988,
+      "technical_help": 0.0,
+      "billing_question": 0.0003,
+      "information": 0.0,
+      "cancellation": 0.0007,
+      "other": 0.0001
+    },
+    "is_urgent": 0.2703,
+    "frustration_score": 2.0281,
+    "frustration_top_level": "2",
+    "refund_requested": 0.9665,
+    "churn_risk": 0.6571,
+    "routing_model": "english"
+  },
+  {
+    "id": "high_frustration_no_clear_ask",
+    "expected_intent": "other",
+    "predicted_intent": "other",
+    "match": true,
+    "intent_confidence": 0.3483,
+    "intent_probabilities": {
+      "refund": 0.2289,
+      "technical_help": 0.0442,
+      "billing_question": 0.0584,
+      "information": 0.0124,
+      "cancellation": 0.0577,
+      "other": 0.5984
+    },
+    "is_urgent": 0.1558,
+    "frustration_score": 2.4328,
+    "frustration_top_level": "2",
+    "refund_requested": 0.1222,
+    "churn_risk": 0.0214,
+    "routing_model": "english"
+  },
+  {
+    "id": "implicit_churn_threat",
+    "expected_intent": "technical_help",
+    "predicted_intent": "technical_help",
+    "match": true,
+    "intent_confidence": 0.7029,
+    "intent_probabilities": {
+      "refund": 0.0026,
+      "technical_help": 0.8426,
+      "billing_question": 0.0017,
+      "information": 0.0022,
+      "cancellation": 0.1286,
+      "other": 0.0223
+    },
+    "is_urgent": 0.8637,
+    "frustration_score": 1.4059,
+    "frustration_top_level": "1",
+    "refund_requested": 0.1034,
+    "churn_risk": 0.8329,
+    "routing_model": "english"
+  },
+  {
+    "id": "urgent_deadline",
+    "expected_intent": "technical_help",
+    "predicted_intent": "technical_help",
+    "match": true,
+    "intent_confidence": 0.8389,
+    "intent_probabilities": {
+      "refund": 0.0045,
+      "technical_help": 0.9374,
+      "billing_question": 0.0023,
+      "information": 0.006,
+      "cancellation": 0.0024,
+      "other": 0.0474
+    },
+    "is_urgent": 0.818,
+    "frustration_score": 1.3312,
+    "frustration_top_level": "1",
+    "refund_requested": 0.0323,
+    "churn_risk": 0.0782,
+    "routing_model": "english"
+  },
+  {
+    "id": "calm_information_request",
+    "expected_intent": "information",
+    "predicted_intent": "other",
+    "match": false,
+    "intent_confidence": 0.4144,
+    "intent_probabilities": {
+      "refund": 0.0259,
+      "technical_help": 0.0818,
+      "billing_question": 0.0345,
+      "information": 0.1171,
+      "cancellation": 0.0416,
+      "other": 0.6991
+    },
+    "is_urgent": 0.1332,
+    "frustration_score": 0.4979,
+    "frustration_top_level": "0",
+    "refund_requested": 0.0001,
+    "churn_risk": 0.1308,
+    "routing_model": "english"
+  },
+  {
+    "id": "hindi_cancellation_request",
+    "expected_intent": "cancellation",
+    "predicted_intent": "cancellation",
+    "match": true,
+    "intent_confidence": 0.9994,
+    "intent_probabilities": {
+      "refund": 0.0,
+      "technical_help": 0.0,
+      "billing_question": 0.0,
+      "information": 0.0,
+      "cancellation": 0.9999,
+      "other": 0.0001
+    },
+    "is_urgent": 0.2023,
+    "frustration_score": 2.2702,
+    "frustration_top_level": "3",
+    "refund_requested": 0.4496,
+    "churn_risk": 0.1313,
+    "routing_model": "multilingual"
+  }
+]

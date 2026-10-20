@@ -1,0 +1,67 @@
+[
+  {
+    "id": "refund_clear",
+    "expected_intent": "refund",
+    "message": "Please refund my last payment, the service never worked for me at all."
+  },
+  {
+    "id": "technical_help_clear",
+    "expected_intent": "technical_help",
+    "message": "The app keeps crashing every time I try to export a file to PDF."
+  },
+  {
+    "id": "billing_question_clear",
+    "expected_intent": "billing_question",
+    "message": "Can you explain why my invoice this month is higher than usual? I didn't change my plan."
+  },
+  {
+    "id": "information_clear",
+    "expected_intent": "information",
+    "message": "What's the difference between the Pro and Business plans? We're trying to decide which to buy."
+  },
+  {
+    "id": "cancellation_clear",
+    "expected_intent": "cancellation",
+    "message": "I want to cancel my subscription at the end of this billing cycle, please confirm it's done."
+  },
+  {
+    "id": "other_clear",
+    "expected_intent": "other",
+    "message": "Just wanted to say thanks, your support team helped me fix my issue yesterday, great job!"
+  },
+  {
+    "id": "known_ambiguous_payment_failed",
+    "expected_intent": "technical_help",
+    "message": "My payment failed twice and nobody is answering!"
+  },
+  {
+    "id": "implicit_refund_angry",
+    "expected_intent": "refund",
+    "message": "This is the third time I've been charged for a plan I cancelled months ago. I want my money back now."
+  },
+  {
+    "id": "high_frustration_no_clear_ask",
+    "expected_intent": "other",
+    "message": "This is ridiculous, I've emailed three times this week and nobody has responded. I'm furious."
+  },
+  {
+    "id": "implicit_churn_threat",
+    "expected_intent": "technical_help",
+    "message": "If the sync issue isn't fixed by Friday, we're moving our whole team to a competitor."
+  },
+  {
+    "id": "urgent_deadline",
+    "expected_intent": "technical_help",
+    "message": "We have a client demo in 2 hours and the dashboard won't load, please help ASAP."
+  },
+  {
+    "id": "calm_information_request",
+    "expected_intent": "information",
+    "message": "Hi, just wondering if you support SSO login for enterprise plans? No rush, whenever you get a chance."
+  },
+  {
+    "id": "hindi_cancellation_request",
+    "expected_intent": "cancellation",
+    "message": "मैं अपनी सदस्यता रद्द करना चाहता हूँ, कृपया इसे इस महीने के अंत तक बंद कर दें।"
+  }
+]

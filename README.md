@@ -61,8 +61,10 @@ print(result["answers"]["department"]["choice"])   # -> "billing"
 |---|---|
 | [`email_routing/`](recipes/email_routing/) | Category + spam/phishing/urgency on 10 real emails (80% category accuracy) — surfaces a serious false-positive: a legitimate Hindi complaint flagged `is_phishing=0.97` |
 | [`phishing_detection/`](recipes/phishing_detection/) | 16 messages across English/Hindi/Marathi, 2 criteria wordings — isolates a real language-driven false-positive bias (same complaint: 0.17 English vs. 0.65–0.91 Hindi) that rewriting the question does not fix |
+| [`support_triage/`](recipes/support_triage/) | 13 tickets through `triage_questions()` (85% intent accuracy) — the more important miss is an *easy*, unambiguous question losing confidently (70%) to `other`, not the hard edge case |
 
-Support triage recipe is next.
+Week 1 (basics + 3 recipes) is complete. Week 2 adds the remaining 6 recipes
+and the `production/` guides.
 
 ### `production/`
 Not yet written -- see the project roadmap.
@@ -113,6 +115,12 @@ Every number printed by these scripts is a real run, not a doc claim.
   Latin script (n=16). Rewriting the question's criteria did not fix this
   and made the Hindi case worse. Don't auto-block on `is_phishing` for
   non-English mail without your own evaluation data.
+- **A plain, easy support question lost to `other` more confidently than a
+  genuinely ambiguous one.** `recipes/support_triage/`: "do you support SSO
+  login" scored `other=70%` vs. `information=12%` under `triage_questions()`
+  — worse than the known-hard "payment failed twice" case (62% vs. 22%).
+  Preset category descriptions can be narrower than your actual traffic;
+  test against real phrasing, not just the textbook example per category.
 
 ## License
 
